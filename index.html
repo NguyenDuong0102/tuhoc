@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<div class="ocean">
+  <div class="wave"></div>
+  <div class="wave wave2"></div>
+  <img src="images/lighthouse.png" class="lighthouse" alt="Hải đăng" />
+  <img src="images/seagull1.png" alt="Seagull 1" class="seagull seagull-left">
+  <img src="images/seagull2.png" alt="Seagull 2" class="seagull seagull-left2">
+
+</div>
+<body>
+ <div class="floating-animals"></div>
+
+<div id="darkModeToggle" class="sun-guide">
+  <img id="themeIcon" src="images/sun.png" alt="Toggle Theme" onclick="toggleDarkMode()" />
+  <div id="guideText">🌞 Thử ấn tôi xem!</div>
+</div>
+
+<img id="darkModeIntro" src="sun.png" alt="Intro sun" />
+<div id="sunSpeechBubble" class="speech hidden"></div>
+<div id="spotlightOverlay" class="spotlight-overlay hidden"></div>
+
+
+ <div class="container">
+  <h1>Từ Vựng Ngày Hôm Nay Là:</h1>
+  <div id="challenge" class="hidden"></div>
+  <div id="caption" class="hidden clickable" onclick="this.classList.toggle('reveal')"></div>
+  <div id="volumeControl" class="hidden">
+    <label for="volume">Âm lượng:</label>
+    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5" />
+     <button id="replayBtn" title="Nghe lại">🔁</button>
+  </div>
+  <img src="a.png" alt="Nút đỏ" id="challengeButton" />
+  <img src="space.png" alt="Minh họa" class="mini-illustration" />
+  <audio id="player" preload="auto"></audio>
+
+</div>
+
+  <script src="script.js"></script>
+   <div class="contact">
+  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><i class="fab fa-facebook"></i></a>
+  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fas fa-envelope"></i></a>
+  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><i class="fab fa-tiktok"></i></a>
+  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><i class="fas fa-comment-dots"></i></a>
+</div>
+
+</body>
+</html>

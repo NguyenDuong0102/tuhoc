@@ -1,0 +1,451 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, #ccefff 0%, #ffffff 100%);
+  transition: background 0.5s ease;
+  overflow: hidden;
+}
+
+.ocean {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  z-index: 19;
+}
+
+.wave {
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" fill="lightblue" xmlns="http://www.w3.org/2000/svg"><path fill-opacity="1" d="M0,160L30,149.3C60,139,120,117,180,122.7C240,128,300,160,360,176C420,192,480,192,540,176C600,160,660,128,720,106.7C780,85,840,75,900,101.3C960,128,1020,192,1080,208C1140,224,1200,192,1260,165.3C1320,139,1380,117,1410,106.7L1440,96L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"/></svg>') repeat-x;
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  bottom: 0;
+  animation: waveMove 10s linear infinite;
+  opacity: 0.6;
+  z-index: 20;
+}
+
+.wave2 {
+  animation-duration: 15s;
+  opacity: 0.3;
+  transform: scaleY(-1);
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+.lighthouse {
+   position: fixed;
+  bottom: 0;
+  right: 40px;
+  height: 30vh;
+  width: auto;
+  opacity: 0.9;
+  z-index: 10; 
+  animation: lighthouseFloat 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@media (max-width: 500px) {
+  .lighthouse {
+    display: none;
+  }
+}
+
+@keyframes lighthouseFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+h1 {
+  color: #ff3d00;
+  margin-bottom: 30px;
+  font-size: 32px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.container {
+  border: 8px solid #ff5722;
+  border-radius: 30px;
+  padding: 40px;
+  background: #fff3e0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+
+#challenge {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #d50000;
+  min-height: 60px;
+  width: 320px;
+  padding: 20px;
+  border: 4px dashed #ff5252;
+  border-radius: 20px;
+  background-color: #fff9f0;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  margin: 0 auto 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mini-illustration {
+  width: 100px;
+  max-width: 80%;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+  pointer-events: none;
+  object-fit: contain;
+  z-index: 1;
+}
+.hidden {
+  display: none !important;
+}
+
+img {
+  cursor: pointer;
+  width: 160px;
+  transition: transform 0.2s ease;
+  margin-top: 10px;
+}
+
+img:hover {
+  transform: scale(1.08);
+}
+
+
+
+.animate-final {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.contact {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.contact a {
+  color: #ff5722;
+  font-size: 28px;
+  margin: 0 12px;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.3s;
+}
+
+.contact a:hover {
+  transform: scale(1.2);
+  color: #d50000;
+}
+
+
+#volumeControl {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#volumeControl label {
+  font-weight: bold;
+  color: #333;
+}
+
+#volume {
+  width: 150px;
+  accent-color: #ff5722;
+  cursor: pointer;
+  
+}
+
+#replayBtn {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+#replayBtn:hover {
+  opacity: 1;
+}
+
+@media (max-width: 500px) {
+  #challenge {
+    width: 90%;
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+
+  img {
+    width: 120px;
+  }
+
+  #volume {
+    width: 100px;
+  }
+}
+.floating-animals {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.animal {
+  position: absolute;
+  opacity: 0.9;
+  animation: floatRandom linear forwards;
+  pointer-events: none;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+
+@keyframes floatRandom {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}
+
+
+#caption {
+  margin-top: 12px;
+  padding: 10px 16px;
+  background-color: #fffbe8;
+  border: 2px dashed #f57c00;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Baloo 2', sans-serif;
+  font-style: italic;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 80%;
+  line-height: 1.5;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  color: transparent;
+  text-shadow: 0 0 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  position: relative;
+}
+
+#caption.show {
+  opacity: 1;
+}
+
+#caption.clickable::after {
+  content: " (Bấm để hiện)";
+  color: #999;
+  font-size: 13px;
+  font-style: normal;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 4px;
+}
+
+#caption.reveal {
+  color: #333;
+  text-shadow: none;
+}
+
+
+#darkModeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#darkModeToggle img {
+  width: 48px;
+  transition: transform 0.3s ease;
+}
+
+#guideText {
+  background-color: #fff8c6;
+  border: 1px dashed #ffa500;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-style: italic;
+  color: #333;
+  margin-top: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  animation: floatText 2s infinite ease-in-out;
+}
+
+
+#guideText.hidden {
+  display: none;
+}
+
+@keyframes floatText {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+body.dark {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  color: #f0f0f0;
+  overflow: hidden;
+  transition: background 1s ease;
+}
+
+.stars {
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  animation: twinkle 2s infinite ease-in-out alternate;
+  opacity: 0.8;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.4); }
+}
+
+.seagull {
+  position: fixed;
+  top: 40px;
+  width: 60px;
+  opacity: 0.9;
+  z-index: 21;
+  pointer-events: none;
+  animation: flySeagull 6s ease-in-out infinite alternate;
+}
+
+.seagull-left {
+  left: 40px;
+}
+
+.seagull-left2 {
+  left: 100px;
+  top: 80px;
+  width: 50px;
+  animation-delay: 2s;
+}
+
+@keyframes flySeagull {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+body.dark .seagull {
+  opacity: 0.4;
+}
+
+
+body.dark .ocean,
+body.dark .lighthouse {
+  display: none;
+}
+/* Vị trí và hoạt ảnh của mặt trời intro */
+
+#darkModeIntro {
+  position: fixed;
+  top: 48vh;
+  right: 100px;
+  width: 80px;
+  height: 80px;
+  z-index: 9999;
+  display: none;
+}
+
+@keyframes sunMoveToCorner {
+  0% {
+    top: 48vh;
+    right: 100px;
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    top: 20px;
+    right: 20px;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.speech {
+  position: fixed;
+  top: 48vh;
+  right: 190px;
+  background: #fff8c6;
+  border: 2px solid #ffa500;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  max-width: 220px;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  display: none;
+}
+
+.speech.hidden {
+  display: none;
+}
+.spotlight-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+#challenge.highlighted {
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 0 30px 10px yellow;
+}
+
